@@ -1,6 +1,3 @@
-//promises are part of async programming, don't have to run all the time
-
-
 var num = Math.floor(Math.random()*100);
 
 $("#button1").click(function() {
@@ -11,25 +8,24 @@ $("#button1").click(function() {
 });
 
 $("#button2").click(function testNum(num) {
-	p = new Promise((resolve, reject) => {
+	var list = $('li.list2');    
+    var li = $('<h3></h3>');
+
+   	p = new Promise((resolve, reject) => {
 		if (num > 50) {
-			resolve(num + "is greater than 50!")
+			resolve("greater")
 		} else {
-			reject(num + "is less than 50!")
+			reject("less than")
 		}
 	})
-	// return p //uncaught promise??
-	var list = $('li.list2');    
-    var li = $('<h1></h1>');
-        li.text(p.data);
-        list.append(li);
+
+	p.then((message) => {
+		li.text('Your number is ' + message + ' than 50!');
+		list.append(li);
+	}).catch((message) => {
+		li.text('Your number is ' + message + ' than 50!');
+		list.append(li);
+	})
+	
 });
 
-//clear button functions
-
-$("#clear1").on("click", function() {
-    $("li.list1").empty();
- });
-$("#clear1").on("click", function() {
-    $("li.list1").empty();
- });

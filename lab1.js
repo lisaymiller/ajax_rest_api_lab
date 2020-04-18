@@ -15,7 +15,7 @@ $("#button1").click(function(){
 });
 
 //Get all posts with ID of 10
-$("#button2").click(function(){r
+$("#button2").click(function(){
   $.get('https://my-json-server.typicode.com/zachhall/WIN2020_AjaxPromises/posts', {id: 10},function(posts){
     posts.forEach(function(post){
     var list = $('li.list2');    
