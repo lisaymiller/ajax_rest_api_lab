@@ -2,6 +2,19 @@
 	position: relative;
 	top: 100px;
 }
+.row {
+	margin-bottom: 15px;
+}
+.randomNumber {
+	display: inline-block;
+}
 h1, p {
 	text-align: center;
+}
+ul.boxScroll {
+  background-color: #e6e6ff;
+  width: 100%;
+  height: 150px;
+  overflow: auto;
+  padding: 10px;
 }
